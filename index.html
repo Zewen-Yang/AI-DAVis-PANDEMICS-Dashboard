@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello!</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+
+<body>
+    <h1 id="title">Interactive Dashboard for AI-Assisted Analysis and Visualization of Pandemic Situations</h1>
+
+    <br>
+    <br>
+    <br>
+    <section>
+        <div id="vis"></div>
+        <script>
+            (function(vegaEmbed) {
+            var spec = "../assets/json/visualization.vg.json"; /* JSON output for your chart's specification */
+            var embedOpt = {"mode": "vega-lite"}; /* Options for the embedding */
+
+            function showError(el, error){
+                el.innerHTML = ('<div style="color:red;">'
+                                + '<p>JavaScript Error: ' + error.message + '</p>'
+                                + "<p>This usually means there's a typo in your chart specification. "
+                                + "See the javascript console for the full traceback.</p>"
+                                + '</div>');
+                throw error;
+            }
+            const el = document.getElementById('vis');
+            vegaEmbed("#vis", spec, embedOpt)
+                .catch(error => showError(el, error));
+            })(vegaEmbed);
+        </script>
+    </section>
+
+
+    <hr>
+    <footer>
+        <div>Made by <a href="https://zewen-yang.github.io/">Zewen</a> with 😁.</div>
+    </footer>
+
+    <script src="../assets/js/main.js">
+    </script>
+</body>
+
+</html>

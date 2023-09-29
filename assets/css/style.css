@@ -1,0 +1,22 @@
+body {
+    /* font-family: sans-serif; */
+    font-family: monospace; 
+    font-size: 1.3em;
+    /* max-width: 1200px; */
+    margin: 30px;
+    }
+    .grid{
+        display: flex;
+    }
+    .half{
+        width: 50%;
+    }
+    h1#title{
+        color: firebrick;
+    }
+    
+    circle{
+        fill: #f00;
+        stroke: #000;
+        stroke-width: 2px;
+    }
