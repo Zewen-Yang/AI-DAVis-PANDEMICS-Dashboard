@@ -16,6 +16,7 @@
     <br>
     <br>
     <br>
+    <p><b>Mouse over or click legend to select country:</b></p>
     <section>
         <div id="vis"></div>
         <script>
@@ -34,6 +35,30 @@
             const el = document.getElementById('vis');
             vegaEmbed("#vis", spec, embedOpt)
                 .catch(error => showError(el, error));
+            })(vegaEmbed);
+        </script>
+    </section>
+
+    <br>
+    <p><b>Drag and draw to select interval:</b></p>
+    <section>
+        <div id="hisVis"></div>
+        <script>
+            (function(vegaEmbed) {
+            var spec_2 = "assets/json/histogram.vg.json"; /* JSON output for your chart's specification */
+            var embedOpt_2 = {"mode": "vega-lite"}; /* Options for the embedding */
+
+            function showError(el, error){
+                el.innerHTML = ('<div style="color:red;">'
+                                + '<p>JavaScript Error: ' + error.message + '</p>'
+                                + "<p>This usually means there's a typo in your chart specification. "
+                                + "See the javascript console for the full traceback.</p>"
+                                + '</div>');
+                throw error;
+            }
+            const el_2 = document.getElementById('hisVis'); // Unique element for the second chart
+            vegaEmbed("#hisVis", spec_2, embedOpt_2)
+                .catch(error => showError(el_2, error));
             })(vegaEmbed);
         </script>
     </section>
