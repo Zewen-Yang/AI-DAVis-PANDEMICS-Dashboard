@@ -16,12 +16,13 @@
     <br>
     <br>
     <br>
+    <h2 id="Cases">Infected Cases</h2>
     <p><b>Mouse over or click legend to select country:</b></p>
     <section>
-        <div id="vis"></div>
+        <div id="sumYear_cases"></div>
         <script>
             (function(vegaEmbed) {
-            var spec = "assets/json/sum_year.vg.json"; /* JSON output for your chart's specification */
+            var spec = "assets/json/sumYear_cases.vg.json"; /* JSON output for your chart's specification */
             var embedOpt = {"mode": "vega-lite"}; /* Options for the embedding */
 
             function showError(el, error){
@@ -32,20 +33,46 @@
                                 + '</div>');
                 throw error;
             }
-            const el = document.getElementById('vis');
-            vegaEmbed("#vis", spec, embedOpt)
+            const el = document.getElementById('sumYear_cases');
+            vegaEmbed("#sumYear_cases", spec, embedOpt)
                 .catch(error => showError(el, error));
             })(vegaEmbed);
         </script>
     </section>
 
     <br>
-    <p><b>Draw and drag to select interval:</b></p>
+    <h2 id="Deaths">Death Cases</h2>
+    <p><b>Mouse over or click legend to select country:</b></p>
     <section>
-        <div id="hisVis"></div>
+        <div id="sumYear_deaths"></div>
         <script>
             (function(vegaEmbed) {
-            var spec_2 = "assets/json/histogram.vg.json"; /* JSON output for your chart's specification */
+            var spec = "assets/json/sumYear_deaths.vg.json"; /* JSON output for your chart's specification */
+            var embedOpt = {"mode": "vega-lite"}; /* Options for the embedding */
+
+            function showError(el, error){
+                el.innerHTML = ('<div style="color:red;">'
+                                + '<p>JavaScript Error: ' + error.message + '</p>'
+                                + "<p>This usually means there's a typo in your chart specification. "
+                                + "See the javascript console for the full traceback.</p>"
+                                + '</div>');
+                throw error;
+            }
+            const el = document.getElementById('sumYear_deaths');
+            vegaEmbed("#sumYear_deaths", spec, embedOpt)
+                .catch(error => showError(el, error));
+            })(vegaEmbed);
+        </script>
+    </section>
+
+    <br>
+    <h2 id="Cases_his">Infected Cases</h2>
+    <p><b>Draw and drag to select interval; mouse over or click legend to select country:</b></p>
+    <section>
+        <div id="his_cases"></div>
+        <script>
+            (function(vegaEmbed) {
+            var spec_2 = "assets/json/his_cases.vg.json"; /* JSON output for your chart's specification */
             var embedOpt_2 = {"mode": "vega-lite"}; /* Options for the embedding */
 
             function showError(el, error){
@@ -56,8 +83,33 @@
                                 + '</div>');
                 throw error;
             }
-            const el_2 = document.getElementById('hisVis'); // Unique element for the second chart
-            vegaEmbed("#hisVis", spec_2, embedOpt_2)
+            const el_2 = document.getElementById('his_cases'); // Unique element for the second chart
+            vegaEmbed("#his_cases", spec_2, embedOpt_2)
+                .catch(error => showError(el_2, error));
+            })(vegaEmbed);
+        </script>
+    </section>
+
+    <br>
+    <h2 id="Deaths_his">Death Cases</h2>
+    <p><b>Draw and drag to select interval; mouse over or click legend to select country:</b></p>
+    <section>
+        <div id="his_deaths"></div>
+        <script>
+            (function(vegaEmbed) {
+            var spec_2 = "assets/json/his_deaths.vg.json"; /* JSON output for your chart's specification */
+            var embedOpt_2 = {"mode": "vega-lite"}; /* Options for the embedding */
+
+            function showError(el, error){
+                el.innerHTML = ('<div style="color:red;">'
+                                + '<p>JavaScript Error: ' + error.message + '</p>'
+                                + "<p>This usually means there's a typo in your chart specification. "
+                                + "See the javascript console for the full traceback.</p>"
+                                + '</div>');
+                throw error;
+            }
+            const el_2 = document.getElementById('his_deaths'); // Unique element for the second chart
+            vegaEmbed("#his_deaths", spec_2, embedOpt_2)
                 .catch(error => showError(el_2, error));
             })(vegaEmbed);
         </script>
